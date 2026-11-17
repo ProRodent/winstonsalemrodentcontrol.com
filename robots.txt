@@ -1,0 +1,25 @@
+# robots.txt for winstonsalemrodentcontrol.com
+# Allow all well-behaved crawlers; block known scrapers + ad-network bots.
+
+User-agent: *
+Allow: /
+Disallow: /404
+Disallow: /404.html
+
+# Block known content-scraping bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Crawl politeness
+Crawl-delay: 1
+
+Sitemap: https://winstonsalemrodentcontrol.com/sitemap.xml

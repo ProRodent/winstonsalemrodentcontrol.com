@@ -1,0 +1,27 @@
+# ============================================================
+# Cloudflare Pages _headers — security + caching
+# ============================================================
+
+# Default: security headers on every response
+/*
+  Strict-Transport-Security: max-age=31536000; includeSubDomains; preload
+  X-Content-Type-Options: nosniff
+  X-Frame-Options: SAMEORIGIN
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=(), payment=(), usb=()
+  Cache-Control: public, max-age=300, s-maxage=3600
+
+# Images: immutable, 1-year cache
+/images/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Assets (future-proofing if CSS gets extracted)
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+# Sitemap + robots: short cache, no immutable
+/sitemap.xml
+  Cache-Control: public, max-age=3600
+
+/robots.txt
+  Cache-Control: public, max-age=3600
